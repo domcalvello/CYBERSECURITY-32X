@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090a0c">
+  <meta name="description" content="A fictional recovered archive for CYBERSECURITY, a lost Sega 32X game.">
+  <title>CYBERSECURITY — The Lost 32X Archive</title>
+  <link rel="stylesheet" href="styles.css?v=20260929-21">
+  <script src="app.js?v=20260929-21" defer></script>
+</head>
+<body class="preboot">
+  <a class="skip-link" href="#archive">Skip power sequence</a>
+  <canvas id="signal-canvas" aria-hidden="true"></canvas>
+
+  <section class="power-deck" id="power-deck" aria-labelledby="power-title">
+    <div class="deck-grid" aria-hidden="true"></div>
+    <div class="deck-topline">
+      <div class="deck-logos" aria-label="SEGA 32X">
+        <img src="assets/logos/sega-logo.png" alt="SEGA">
+        <img src="assets/logos/32x-logo.png" alt="32X">
+      </div>
+      <div class="deck-meta">
+        <span class="archive-year">YEAR: 1995</span>
+      </div>
+    </div>
+    <div class="power-copy">
+      <p class="boot-note">Mysteriously discontinued in the mid-90s. Explore the lost Sega title.</p>
+      <h1 id="power-title">CYBERSECURITY</h1>
+      <p class="tagline">ENTER THE NET. DEFEND THE FUTURE.</p>
+    </div>
+
+    <div class="console-controls" aria-label="Power controls">
+      <img class="console-screenprint" src="assets/logos/sega32x-white-logo.png" alt="" aria-hidden="true">
+      <div class="power-cluster">
+        <button class="power-switch" id="power-switch" type="button" aria-pressed="false" aria-label="Power switch">
+          <span class="switch-legend" aria-hidden="true"><span>ON</span><span>OFF</span></span>
+          <span class="switch-track"><span class="switch-knob"></span></span>
+        </button>
+        <div class="power-lamp" id="power-lamp" aria-hidden="true">
+          <span class="lamp-lens"></span>
+          <span class="lamp-label">POWER</span>
+        </div>
+      </div>
+      <button class="start-key" id="boot-start" type="button">
+        <span>START</span>
+      </button>
+    </div>
+  </section>
+
+  <header class="archive-header" id="archive" tabindex="-1">
+    <a class="header-home" href="#power-deck" aria-label="Return to home">
+      <div class="header-mark" aria-hidden="true"><span>32</span>X</div>
+      <div class="header-title">
+        <strong>CYBERSECURITY</strong>
+        <span>SEGA RECOVERED ARCHIVE</span>
+      </div>
+    </a>
+    <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false">
+      SOUND <span>OFF</span>
+    </button>
+  </header>
+
+  <main id="story" class="story" aria-label="Recovered game archive"></main>
+
+  <section class="recovered-video" id="recovered-video" aria-labelledby="video-title">
+    <div class="video-copy">
+      <h2 id="video-title">GAMEPLAY</h2>
+      <p>The last readable frames on the cartridge. The tape counter stops after six seconds.</p>
+      <div class="tape-meta"><span>SP</span><span>CH 03</span><span>TRACKING</span></div>
+    </div>
+    <div class="video-shell">
+      <video controls playsinline preload="metadata" poster="assets/images/12_first_play.png">
+        <source src="assets/video/recovered-footage.mp4" type="video/mp4">
+        Your browser does not support embedded video.
+      </video>
+    </div>
+  </section>
+
+  <footer class="archive-footer">
+    <div>
+      <strong>ARCHIVE COMPLETE</strong>
+      <p>© DJC Designs. All rights reserved.</p>
+    </div>
+    <button class="replay-button" id="replay-button" type="button">REPLAY ARCHIVE</button>
+  </footer>
+
+  <dialog class="stage-dialog" id="stage-dialog">
+    <div class="stage-shell">
+      <div class="stage-heading">
+        <h2>SELECT CHAPTER</h2>
+        <button id="stage-close" type="button" aria-label="Close chapter select">CLOSE</button>
+      </div>
+      <nav id="stage-list" aria-label="Chapters"></nav>
+      <p class="stage-help">Arrow keys move · A inspects · B returns · C continues · Start opens this screen</p>
+    </div>
+  </dialog>
+
+</body>
+</html>

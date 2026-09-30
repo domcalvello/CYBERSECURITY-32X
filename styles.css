@@ -842,11 +842,11 @@ textarea {
   right: 16px;
 }
 
-.website-compare .compare-canvas {
-  --compare-label-bar: 48px;
+.service-product[data-service="Website Visual Upgrade"] .compare-canvas {
+  --compare-label-bar: 36px;
 }
 
-.website-compare .compare-canvas::before {
+.service-product[data-service="Website Visual Upgrade"] .compare-canvas::before {
   content: "";
   position: absolute;
   z-index: 2;
@@ -855,33 +855,36 @@ textarea {
   background: var(--navy-950);
 }
 
-.website-compare .compare-canvas > .compare-image {
+.service-product[data-service="Website Visual Upgrade"] .compare-canvas > .compare-image {
   top: var(--compare-label-bar);
   bottom: auto;
   height: calc(100% - var(--compare-label-bar));
 }
 
-.website-compare .compare-before {
+.service-product[data-service="Website Visual Upgrade"] .compare-before {
   top: var(--compare-label-bar);
   bottom: auto;
   height: calc(100% - var(--compare-label-bar));
 }
 
-.website-compare .compare-before .compare-image {
+.service-product[data-service="Website Visual Upgrade"] .compare-before .compare-image {
   top: 0;
   height: 100%;
 }
 
-.website-compare .compare-divider,
-.website-compare .compare-range {
+.service-product[data-service="Website Visual Upgrade"] .compare-divider,
+.service-product[data-service="Website Visual Upgrade"] .compare-range {
   top: var(--compare-label-bar);
   bottom: auto;
   height: calc(100% - var(--compare-label-bar));
 }
 
-.website-compare .compare-label {
+.service-product[data-service="Website Visual Upgrade"] .compare-label {
   z-index: 3;
-  top: 8px;
+  top: 5px;
+  padding: 6px 8px;
+  font-size: 0.64rem;
+  line-height: 1;
 }
 
 .compare-range {

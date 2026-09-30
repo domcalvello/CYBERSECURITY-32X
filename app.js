@@ -243,8 +243,7 @@ const chapters = [
     note: "Pull the cable? No—that makes it worse.",
     material: "material-hijack gameplay",
     stickers: [
-      { text: "NINE INCH NAILS", src: "assets/stickers/nin-sticker.png", cls: "image-sticker" },
-      { text: "COMPACT DISC", src: "assets/stickers/cd-sticker.png", cls: "image-sticker" }
+      { text: "NINE INCH NAILS", src: "assets/stickers/nin-sticker.png", cls: "image-sticker" }
     ]
   },
   {
@@ -304,6 +303,9 @@ function renderChapters() {
           <div class="media-frame">
             <img src="${chapter.image}" alt="${chapter.alt}" ${index > 1 ? 'loading="lazy"' : ""} decoding="async">
           </div>
+          <button class="mobile-story-jump" type="button" data-action="details" aria-label="Continue to ${chapter.title} description and controls">
+            <span>NEXT</span>
+          </button>
         </div>
         <div class="story-panel">
           ${stickers}
@@ -532,7 +534,8 @@ document.querySelector("#stage-close").addEventListener("click", () => stageDial
 document.querySelector("#sound-toggle").addEventListener("click", event => {
   soundEnabled = !soundEnabled;
   event.currentTarget.setAttribute("aria-pressed", String(soundEnabled));
-  event.currentTarget.querySelector("span").textContent = soundEnabled ? "ON" : "OFF";
+  event.currentTarget.setAttribute("aria-label", soundEnabled ? "Turn sound off" : "Turn sound on");
+  event.currentTarget.querySelector(".sound-state").textContent = soundEnabled ? "ON" : "OFF";
   if (soundEnabled) { audio.ensure(); audio.blip(520, .13, "triangle"); }
 });
 document.querySelector("#replay-button").addEventListener("click", () => {
@@ -549,6 +552,7 @@ story.addEventListener("click", event => {
   if (action === "inspect") inspectCurrent();
   if (action === "back") previousChapter();
   if (action === "next") nextChapter();
+  if (action === "details") chapter.querySelector(".story-panel").scrollIntoView({ behavior: reducedMotion.matches ? "auto" : "smooth", block: "start" });
   if (action === "stages") openStages();
 });
 

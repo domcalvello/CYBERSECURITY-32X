@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#090a0c">
   <meta name="description" content="A fictional recovered archive for CYBERSECURITY, a lost Sega 32X game.">
   <title>CYBERSECURITY — The Lost 32X Archive</title>
-  <link rel="stylesheet" href="styles.css?v=20260929-23">
-  <script src="app.js?v=20260929-23" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260929-24">
+  <script src="app.js?v=20260929-24" defer></script>
 </head>
 <body class="preboot">
   <a class="skip-link" href="#archive">Skip power sequence</a>
@@ -56,8 +56,13 @@
         <span>SEGA RECOVERED ARCHIVE</span>
       </div>
     </a>
-    <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false">
-      SOUND <span>OFF</span>
+    <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false" aria-label="Turn sound on">
+      <span class="sound-label" aria-hidden="true">SOUND <span class="sound-state">OFF</span></span>
+      <svg class="sound-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path class="speaker-shape" d="M4 9v6h4l5 4V5L8 9H4Z"/>
+        <path class="sound-waves" d="M16 8.5c1.4 1.5 1.4 5.5 0 7M19 6c3.2 3.2 3.2 8.8 0 12"/>
+        <path class="mute-mark" d="m16.5 9 5 6m0-6-5 6"/>
+      </svg>
     </button>
   </header>
 

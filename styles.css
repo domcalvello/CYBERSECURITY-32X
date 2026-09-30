@@ -426,8 +426,11 @@ button:focus-visible, a:focus-visible, [tabindex]:focus-visible {
   cursor: pointer;
   font-family: monospace;
 }
-.sound-toggle span { color: #ff6d62; }
-.sound-toggle[aria-pressed="true"] span { color: var(--green); }
+.sound-state { color: #ff6d62; }
+.sound-toggle[aria-pressed="true"] .sound-state { color: var(--green); }
+.sound-icon { display: none; }
+
+.mobile-story-jump { display: none; }
 
 .story { position: relative; z-index: 2; }
 .chapter {
@@ -960,10 +963,52 @@ button:focus-visible, a:focus-visible, [tabindex]:focus-visible {
   .lamp-lens { width:48px; border-width:4px; }
   .start-key { min-width:142px; }
   .archive-header { grid-template-columns:1fr auto; }
-  .sound-toggle { padding:.55rem; font-size:.75rem; }
+  .sound-toggle {
+    display:grid;
+    width:38px;
+    height:38px;
+    padding:0;
+    place-items:center;
+    border-radius:50%;
+  }
+  .sound-label { display:none; }
+  .sound-icon {
+    display:block;
+    width:20px;
+    height:20px;
+    fill:currentColor;
+  }
+  .sound-icon path { vector-effect:non-scaling-stroke; }
+  .sound-waves, .mute-mark {
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.8;
+    stroke-linecap:round;
+  }
+  .sound-waves { display:none; }
+  .sound-toggle[aria-pressed="true"] { color:var(--green); }
+  .sound-toggle[aria-pressed="true"] .sound-waves { display:block; }
+  .sound-toggle[aria-pressed="true"] .mute-mark { display:none; }
   .header-title span { display:none; }
-  .media-panel { min-height:auto; padding:6.5rem .9rem; }
+  .media-panel { min-height:auto; padding:6.5rem .9rem 3rem; }
   .media-frame img { max-height:none; }
+  .mobile-story-jump {
+    display:grid;
+    min-width:132px;
+    min-height:48px;
+    margin:2rem auto 0;
+    padding:.85rem 1.4rem .75rem;
+    place-items:center;
+    color:#090909;
+    background:linear-gradient(180deg,#fff,#deded8 72%,#b9b9b3);
+    border:0;
+    border-radius:999px;
+    box-shadow:inset 0 2px 2px rgba(255,255,255,.95),0 5px 9px rgba(0,0,0,.4);
+    cursor:pointer;
+    font-family:"Press Start 2P",monospace;
+    font-size:.68rem;
+  }
+  .mobile-story-jump:active { transform:translateY(3px); box-shadow:inset 0 3px 5px #000; }
   .story-panel { min-height:0; padding:6rem 1.25rem; }
   .gameplay .story-panel { padding:10rem 1.25rem 11.5rem; }
   .chapter h2 {
@@ -1004,7 +1049,6 @@ button:focus-visible, a:focus-visible, [tabindex]:focus-visible {
   .deck-logos img { height:18px; }
   .deck-logos img:last-child { height:16px; }
   .archive-header { grid-template-columns:1fr auto; }
-  .sound-toggle { grid-column:1 / -1; justify-self:end; }
   .chapter-controls { grid-template-columns:1fr; }
   .chapter-controls .start-pad { grid-column:1; justify-self:center; }
   .gameplay .story-panel { padding-bottom:11rem; }

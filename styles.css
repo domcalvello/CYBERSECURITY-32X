@@ -204,13 +204,15 @@ button:focus-visible, a:focus-visible, [tabindex]:focus-visible {
   position: relative;
   z-index: 20;
   align-self: center;
+  min-width: 0;
+  container-type: inline-size;
   padding: clamp(3rem, 8vw, 8rem) 2vw 5rem 0;
 }
 .power-copy h1 {
   margin: 1.25rem 0 .75rem;
   max-width: 100%;
   font-family: "Press Start 2P", monospace;
-  font-size: clamp(2rem, 4.6vw, 4.8rem);
+  font-size: clamp(1.35rem, 7cqw, 4.8rem);
   line-height: 1;
   letter-spacing: -.035em;
   white-space: nowrap;
@@ -655,10 +657,10 @@ button:focus-visible, a:focus-visible, [tabindex]:focus-visible {
   margin-top: 2.5rem;
 }
 .chapter-controls .start-pad {
-  grid-column: 1;
+  grid-column: 2;
   width: max-content;
   min-width: 108px;
-  justify-self: start;
+  justify-self: center;
 }
 .pad-button {
   min-width: 86px;
@@ -945,7 +947,6 @@ button:focus-visible, a:focus-visible, [tabindex]:focus-visible {
   .deck-meta { display:grid; gap:.18rem; font-size:.7rem; line-height:1.45; white-space:nowrap; }
   .power-copy { padding:3.25rem 0 2rem; }
   .power-copy h1 {
-    font-size:clamp(1.8rem, 7.8vw, 2.9rem);
     line-height:1.08;
     letter-spacing:-.04em;
   }
@@ -982,7 +983,7 @@ button:focus-visible, a:focus-visible, [tabindex]:focus-visible {
     width:100%;
   }
   .chapter-controls .pad-button { min-width:0; width:100%; }
-  .chapter-controls .start-pad { grid-column:1 / -1; width:max-content; justify-self:start; }
+  .chapter-controls .start-pad { grid-column:2; width:max-content; justify-self:center; }
   .sticker.image-sticker { width:clamp(96px,29vw,124px); }
   .sticker:nth-child(1) { top:1rem; right:1rem; }
   .sticker:nth-child(2) { bottom:1rem; left:1.25rem; }
@@ -1002,11 +1003,10 @@ button:focus-visible, a:focus-visible, [tabindex]:focus-visible {
   .deck-logos { flex-direction:column; align-items:flex-start; gap:.35rem; }
   .deck-logos img { height:18px; }
   .deck-logos img:last-child { height:16px; }
-  .power-copy h1 { font-size:clamp(1.55rem,7.6vw,2rem); }
   .archive-header { grid-template-columns:1fr auto; }
   .sound-toggle { grid-column:1 / -1; justify-self:end; }
   .chapter-controls { grid-template-columns:1fr; }
-  .chapter-controls .start-pad { grid-column:1; }
+  .chapter-controls .start-pad { grid-column:1; justify-self:center; }
   .gameplay .story-panel { padding-bottom:11rem; }
   .sticker.image-sticker { width:104px; }
 }
